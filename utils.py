@@ -2,6 +2,7 @@ from collections import Counter
 from fastDamerauLevenshtein import damerauLevenshtein
 from fuzzywuzzy import process
 from TagalogStemmerPython.TglStemmer import stemmer
+import time
 
 # from textattack.transformations import WordSwapRandomCharacterDeletion
 # from textattack.transformations import CompositeTransformation
@@ -77,7 +78,7 @@ def collate_max(og_dict, setting='normal'):
       d = {item:1 for item in d}
     else:
       total = len(og_dict[key])
-      d = {key:d[key]/total for key in d} # 
+      d = {key:d[key]/total for key in d} 
     # og_dict[key] = sorted(list(d.keys()), key=lambda x: d[x]) used to sort, doesn't really do anything
     og_dict[key] = d
   return og_dict
@@ -89,7 +90,7 @@ def generate_candidates(word, d, max_sub):
 
   result = {}
   
-  for len_sub in range(2,max_sub):
+  for len_sub in range(1,max_sub+1):
     
     if len(word)<len_sub:
       continue
@@ -117,8 +118,9 @@ def generate_candidates(word, d, max_sub):
 
     else:
       next_replacements = generate_candidates(word[1:], d, max_sub)
-      result = {word[0]+i:next_replacements[i] for i in next_replacements}
-  
+      temp_result = {word[0]+i:next_replacements[i] for i in next_replacements}
+      result.update(temp_result)
+
   return result
 
 # def generate_candidates(word, d):
@@ -155,38 +157,47 @@ def summarize_results(lst):
   return results
 
 # Function to choose top k candidates
-def choose_top_k(candidates, orig, vocab, k, dld_right, dld_wrong):
+def choose_top_k(candidates, orig, vocab, k, use_dld): # dld_right, dld_wrong
     
-  matches = []
-  for c in candidates:
-    try:
-      if all(map(lambda x: x in vocab, stemmer(c.strip())[1])):
-        matches.append(c)
-    except:
-      pass
+  # matches = []
+  # for c in candidates:
+  #   try:
+  #     if all(map(lambda x: x in vocab, stemmer(c.strip())[1])):
+  #       matches.append(c)
+  #   except:
+  #     pass
+  matches = [c for c in candidates if all(map(lambda x: x in vocab, c.strip().split()))]
 
-  if len(matches)>0:
-    if dld_right==True:
-      matches = sorted(matches, key=lambda c: damerauLevenshtein(orig, c, similarity=False))
-      return matches[:k]
-    else:
-      print(matches)
-      print(candidates)
-      matches = sorted(matches, key=lambda c: candidates[c])
-      return matches[:k]
+  if use_dld:
+    return [i[0].strip() for i in process.extract(orig, matches if len(matches)>0 else vocab, limit=k)]
   else:
-    if dld_wrong==True:
-      return [i[0] for i in process.extract(orig, vocab, limit=k)]
-    else:
-      matches = sorted(candidates, key=lambda c: candidates[c])
-      return matches[:k]
+    matches = sorted(matches if len(matches)>0 else candidates, key=lambda c: candidates[c])
+    return [i.strip() for i in matches[:k]]
 
-def generate(word_lst, rule_dict, vocab, dld_right, dld_wrong, max_sub):
+  # if len(matches)>0:
+  #   if dld_right==True:
+  #     return [i[0] for i in process.extract(orig, matches, limit=k)]
+  #   else:
+  #     matches = sorted(matches, key=lambda c: candidates[c])
+  #     return matches[:k]
+  # else:
+  #   if dld_wrong==True:
+  #     return [i[0] for i in process.extract(orig, vocab, limit=k)]
+  #   else:
+  #     matches = sorted(candidates, key=lambda c: candidates[c])
+  #     return matches[:k]
+
+def generate(word_lst, rule_dict, vocab, use_dld, max_sub):
   result_lst = []
+  time_lst = []
   for word in word_lst:
+    start_time = time.time()
     candidates = generate_candidates(word, rule_dict, max_sub)
-    results = choose_top_k(candidates, word, vocab, 5, dld_wrong, dld_right)
+    results = choose_top_k(candidates, word, vocab, 5, use_dld)
+    end_time = time.time()
     result_lst.append(results)
+    time_lst.append(end_time-start_time)
+  print(f"Average Time: {sum(time_lst)/len(time_lst)}")
   return result_lst
 
 def evaluate(result_lst, target_lst):
