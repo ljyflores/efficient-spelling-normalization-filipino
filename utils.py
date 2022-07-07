@@ -11,6 +11,13 @@ from textattack.augmentation import Augmenter
 transformation = CompositeTransformation([WordSwapRandomCharacterDeletion()])
 augmenter = Augmenter(transformation=transformation, transformations_per_example=1)
 
+# def encode_utf8(s, num_special_tokens):
+#       return torch.tensor([list(s.encode("utf-8"))]) + num_special_tokens
+
+# def decode_utf8(s, num_special_tokens):
+#   s = (s-num_special_tokens).numpy()[0]
+#   return ''.join(map(chr, s))
+
 def perturb_test_sent(s, vocab_lst):
   output = []
   for word in s.split():
