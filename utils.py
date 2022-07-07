@@ -4,19 +4,19 @@ from fuzzywuzzy import process
 from TagalogStemmerPython.TglStemmer import stemmer
 import time
 
-# from textattack.transformations import WordSwapRandomCharacterDeletion
-# from textattack.transformations import CompositeTransformation
-# from textattack.augmentation import Augmenter
+from textattack.transformations import WordSwapRandomCharacterDeletion
+from textattack.transformations import CompositeTransformation
+from textattack.augmentation import Augmenter
 
-# transformation = CompositeTransformation([WordSwapRandomCharacterDeletion()])
-# augmenter = Augmenter(transformation=transformation, transformations_per_example=1)
+transformation = CompositeTransformation([WordSwapRandomCharacterDeletion()])
+augmenter = Augmenter(transformation=transformation, transformations_per_example=1)
 
-# def perturb_test_sent(s, vocab_lst):
-#   output = []
-#   for word in s.split():
-#     new_word = word if word in vocab_lst else augmenter.augment(word)[0]
-#     output.append(new_word)
-#   return ' '.join(output)
+def perturb_test_sent(s, vocab_lst):
+  output = []
+  for word in s.split():
+    new_word = word if word in vocab_lst else augmenter.augment(word)[0]
+    output.append(new_word)
+  return ' '.join(output)
 
 def remove_name(s):
   word_lst = s.split()
