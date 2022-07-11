@@ -1,6 +1,7 @@
 from collections import Counter
-from fastDamerauLevenshtein import damerauLevenshtein
-from fuzzywuzzy import process
+# from fastDamerauLevenshtein import damerauLevenshtein
+# from fuzzywuzzy import process
+from pyxdameraulevenshtein import damerau_levenshtein_distance_seqs
 from TagalogStemmerPython.TglStemmer import stemmer
 import time
 
@@ -140,7 +141,8 @@ def generate_candidates(word, d, max_sub):
 
 def evaluate_indiv(results, target):
   # DL distance
-  dl_distance = list(map(lambda x: damerauLevenshtein(x, target, similarity=False), results))
+  # dl_distance = list(map(lambda x: damerauLevenshtein(x, target, similarity=False), results))
+  dl_distance = damerau_levenshtein_distance_seqs(target, results)
 
   # Accuracy @ 1,3,5,10
   acc_at_k = [target in results[:k] for k in [1,3,5]]
@@ -174,12 +176,16 @@ def choose_top_k(candidates, orig, vocab, k, use_dld): # dld_right, dld_wrong
   #   except:
   #     pass
   matches = [c for c in candidates if all(map(lambda x: x in vocab, c.strip().split()))]
-
+  
   if use_dld:
-    return [i[0].strip() for i in process.extract(orig, matches if len(matches)>0 else vocab, limit=k)]
+    # return [i[0].strip() for i in process.extract(orig, matches, limit=k)]
+    matches = matches if len(matches)>0 else vocab
+    dld_scores = damerau_levenshtein_distance_seqs(orig, matches)
+    matches = [word for (word, _) in sorted(zip(matches, dld_scores), key=lambda pair: pair[1])]
   else:
-    matches = sorted(matches if len(matches)>0 else candidates, key=lambda c: candidates[c])
-    return [i.strip() for i in matches[:k]]
+    matches = matches if len(matches)>0 else candidates
+    matches = sorted(matches, key=lambda c: candidates[c])
+  return [i.strip() for i in matches[:k]]
 
   # if len(matches)>0:
   #   if dld_right==True:
@@ -214,3 +220,28 @@ def evaluate(result_lst, target_lst):
     result_dict['target_in_candidate'] = target in result
     results_lst.append(result_dict)
   return summarize_results(results_lst)
+
+def compare_rules(orig_word, correct_word, comparison_dict):
+  # Generate Dictionary
+  new_dict = {}
+  new_dict = collate_dict(new_dict, collect_rules(orig_word, correct_word, 2))
+                          
+  for key in new_dict:
+    new_dict[key] = new_dict[key]+[key]
+      
+  # Extract Rules
+  rule_lst = []
+  for key in new_dict:
+    temp_lst = list(set(new_dict[key]))
+    for item in temp_lst:
+      rule_lst.append((key,item))
+          
+  # Compare to Original Training Dictionary
+  good_rule_lst, bad_rule_lst = [], []
+  for (source,replacement) in rule_lst:
+    if (source in comparison_dict) and (replacement in comparison_dict[source]):
+      good_rule_lst.append((source,replacement))
+    else:
+      bad_rule_lst.append((source,replacement))
+          
+  return good_rule_lst, bad_rule_lst
