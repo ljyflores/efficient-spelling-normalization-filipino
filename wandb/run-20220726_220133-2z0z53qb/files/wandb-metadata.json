@@ -1,0 +1,34 @@
+{
+    "os": "Linux-5.4.0-122-generic-x86_64-with-glibc2.31",
+    "python": "3.9.5",
+    "heartbeatAt": "2022-07-27T02:01:44.441745",
+    "startedAt": "2022-07-27T02:01:33.520004",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 8,
+    "cpu_count": 40,
+    "cuda": null,
+    "args": [
+        "--ip=127.0.0.1",
+        "--stdin=9003",
+        "--control=9001",
+        "--hb=9000",
+        "--Session.signature_scheme=\"hmac-sha256\"",
+        "--Session.key=b\"5055210d-3980-46d1-89f6-2e6636f7f348\"",
+        "--shell=9002",
+        "--transport=\"tcp\"",
+        "--iopub=9004",
+        "--f=/home/lily/lyf6/.local/share/jupyter/runtime/kernel-v2-850885d9Fa9auY3BpX.json"
+    ],
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/ljyflores/Filipino-Slang.git",
+        "commit": "3ed6228b3aba140a8d69e0a71716110d367e6678"
+    },
+    "email": null,
+    "root": "/data/lily/lyf6/Filipino-Slang",
+    "host": "ziva",
+    "username": "lyf6",
+    "executable": "/home/lily/lyf6/miniconda3/bin/python"
+}
