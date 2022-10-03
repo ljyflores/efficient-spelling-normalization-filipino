@@ -35,15 +35,15 @@ def remove_name(s):
       break
   return ' '.join(word_lst)
 
-def collect_rules(wrong, right, tg_len=2):
+def collect_rules(wrong, right, sc_len=2, tg_len=2):
   d = {}
   ptr_wrong, ptr_right = 0, 0
   
   while (ptr_wrong<len(wrong)) and (ptr_right<len(right)):
-    sub_wrong = wrong[ptr_wrong:ptr_wrong+tg_len]
+    sub_wrong = wrong[ptr_wrong:ptr_wrong+sc_len]
     sub_right = right[ptr_right:ptr_right+tg_len]
     if sub_wrong==sub_right:
-        ptr_wrong += tg_len
+        ptr_wrong += sc_len
         ptr_right += tg_len
     else:
         ptr_wrong += 1
@@ -91,31 +91,35 @@ def collate_max(og_dict, setting='normal'):
     og_dict[key] = d
   return og_dict
 
-def generate_candidates(word, d, max_sub):
+def generate_candidates(word, d, max_sub, cutoff):
   # If the word is empty, return nothing
   if word=='':
     return {'':1}
-
-  result = {}
   
-  for len_sub in range(1,max_sub+1):
+  if len(word)==1:
+    if word in d:
+      return d[word]
+    else:
+      return {word:1, '':1}
     
+  result = {}
+  for len_sub in range(2,max_sub+1):    
     if len(word)<len_sub:
       continue
 
     current_substring = word[:len_sub]
-
+    
     if current_substring in d:
       replacements = d[current_substring]
-
-      for r in replacements:
+      # print(replacements)
+      for r in list(replacements):
         if r==current_substring:
           # If the replacement matches exactly, move on to the next 2 letters
-          next_replacements = generate_candidates(word[len_sub:], d, max_sub)
+          next_replacements = generate_candidates(word[len_sub:], d, max_sub, cutoff)
         else:
           # Otherwise, recurse on the succeeding 2 letters
-          next_replacements = generate_candidates(word[1:], d, max_sub)
-          # print(next_replacements)
+          next_replacements = generate_candidates(word[1:], d, max_sub, cutoff)
+
         # Add the empty string to account for the case where we should no longer recurse
         next_replacements[''] = 1
 
@@ -123,13 +127,15 @@ def generate_candidates(word, d, max_sub):
 
         possible_combos = {r+i:replacements[r]*next_replacements[i] for i in next_replacements}
         result.update(possible_combos)
-
     else:
-      next_replacements = generate_candidates(word[1:], d, max_sub)
+      next_replacements = generate_candidates(word[1:], d, max_sub, cutoff)
       temp_result = {word[0]+i:next_replacements[i] for i in next_replacements}
       result.update(temp_result)
-
-  return result
+    # print(current_substring)
+    # print(result)
+  cutoff_val = sorted(list(result.values()))[::-1][:cutoff][-1]
+  result_filtered = {key:result[key] for key in result if result[key]>=cutoff_val}
+  return result_filtered
 
 # def generate_candidates(word, d):
 #     # Generate candidates
@@ -200,12 +206,12 @@ def choose_top_k(candidates, orig, vocab, k, use_dld): # dld_right, dld_wrong
   #     matches = sorted(candidates, key=lambda c: candidates[c])
   #     return matches[:k]
 
-def generate(word_lst, rule_dict, vocab, use_dld, max_sub):
+def generate(word_lst, rule_dict, vocab, use_dld, max_sub, cutoff):
   result_lst = []
   time_lst = []
   for word in word_lst:
     start_time = time.time()
-    candidates = generate_candidates(word, rule_dict, max_sub)
+    candidates = generate_candidates(word, rule_dict, max_sub, cutoff)
     results = choose_top_k(candidates, word, vocab, 5, use_dld)
     end_time = time.time()
     result_lst.append(results)
@@ -224,7 +230,7 @@ def evaluate(result_lst, target_lst):
 def compare_rules(orig_word, correct_word, comparison_dict):
   # Generate Dictionary
   new_dict = {}
-  new_dict = collate_dict(new_dict, collect_rules(orig_word, correct_word, 2))
+  new_dict = collate_dict(new_dict, collect_rules(orig_word, correct_word, 2, 2))
                           
   for key in new_dict:
     new_dict[key] = new_dict[key]+[key]

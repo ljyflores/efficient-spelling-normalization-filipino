@@ -1,0 +1,206 @@
+RESULTS FOR DLD = True
+
+Orig Train-Test Splits
+Use DLD: True, Max Sub: 2, Cutoff: 10
+Average Time: 0.01005640983581543
+{'best_dl': 1.52, 'max_dl': 4.67, 'avg_dl': 3.196833333333333, 'acc_1': 0.55, 'acc_3': 0.61, 'acc_5': 0.61, 'target_in_candidate': 0.61}
+Use DLD: True, Max Sub: 2, Cutoff: 20
+Average Time: 0.008663125038146972
+{'best_dl': 1.33, 'max_dl': 4.62, 'avg_dl': 3.090666666666666, 'acc_1': 0.61, 'acc_3': 0.67, 'acc_5': 0.67, 'target_in_candidate': 0.67}
+Use DLD: True, Max Sub: 2, Cutoff: 30
+Average Time: 0.008629612922668457
+{'best_dl': 1.21, 'max_dl': 4.59, 'avg_dl': 3.0296666666666656, 'acc_1': 0.63, 'acc_3': 0.7, 'acc_5': 0.7, 'target_in_candidate': 0.7}
+Use DLD: True, Max Sub: 2, Cutoff: 40
+Average Time: 0.008629088401794433
+{'best_dl': 1.2, 'max_dl': 4.62, 'avg_dl': 3.0305, 'acc_1': 0.63, 'acc_3': 0.7, 'acc_5': 0.71, 'target_in_candidate': 0.71}
+Use DLD: True, Max Sub: 2, Cutoff: 50
+Average Time: 0.008702247142791749
+{'best_dl': 1.19, 'max_dl': 4.59, 'avg_dl': 3.0001666666666664, 'acc_1': 0.63, 'acc_3': 0.7, 'acc_5': 0.7, 'target_in_candidate': 0.7}
+Use DLD: True, Max Sub: 2, Cutoff: 100
+Average Time: 0.008687856197357178
+{'best_dl': 1.03, 'max_dl': 4.59, 'avg_dl': 2.964, 'acc_1': 0.67, 'acc_3': 0.74, 'acc_5': 0.74, 'target_in_candidate': 0.74}
+Use DLD: True, Max Sub: 2, Cutoff: 200
+Average Time: 0.008776752948760987
+{'best_dl': 1.05, 'max_dl': 4.61, 'avg_dl': 2.9614999999999996, 'acc_1': 0.66, 'acc_3': 0.73, 'acc_5': 0.73, 'target_in_candidate': 0.73}
+Use DLD: True, Max Sub: 2, Cutoff: 300
+Average Time: 0.008760428428649903
+{'best_dl': 1.04, 'max_dl': 4.6, 'avg_dl': 2.9794999999999994, 'acc_1': 0.66, 'acc_3': 0.73, 'acc_5': 0.74, 'target_in_candidate': 0.74}
+Use DLD: True, Max Sub: 2, Cutoff: 400
+Average Time: 0.00877497911453247
+{'best_dl': 1.05, 'max_dl': 4.61, 'avg_dl': 2.9775000000000005, 'acc_1': 0.66, 'acc_3': 0.73, 'acc_5': 0.74, 'target_in_candidate': 0.74}
+Use DLD: True, Max Sub: 3, Cutoff: 10
+Average Time: 0.017638342380523683
+{'best_dl': 2.83, 'max_dl': 4.63, 'avg_dl': 3.824833333333333, 'acc_1': 0.3, 'acc_3': 0.35, 'acc_5': 0.36, 'target_in_candidate': 0.36}
+Use DLD: True, Max Sub: 3, Cutoff: 20
+Average Time: 0.018758301734924317
+{'best_dl': 1.81, 'max_dl': 4.63, 'avg_dl': 3.3366666666666664, 'acc_1': 0.48, 'acc_3': 0.56, 'acc_5': 0.56, 'target_in_candidate': 0.56}
+Use DLD: True, Max Sub: 3, Cutoff: 30
+Average Time: 0.01925480842590332
+{'best_dl': 1.36, 'max_dl': 4.61, 'avg_dl': 3.158166666666667, 'acc_1': 0.56, 'acc_3': 0.65, 'acc_5': 0.65, 'target_in_candidate': 0.65}
+Use DLD: True, Max Sub: 3, Cutoff: 40
+Average Time: 0.02061550855636597
+{'best_dl': 1.18, 'max_dl': 4.62, 'avg_dl': 3.0520000000000005, 'acc_1': 0.59, 'acc_3': 0.68, 'acc_5': 0.68, 'target_in_candidate': 0.68}
+Use DLD: True, Max Sub: 3, Cutoff: 50
+Average Time: 0.01958130121231079
+{'best_dl': 1.09, 'max_dl': 4.61, 'avg_dl': 3.032, 'acc_1': 0.6, 'acc_3': 0.7, 'acc_5': 0.7, 'target_in_candidate': 0.7}
+Use DLD: True, Max Sub: 3, Cutoff: 100
+Average Time: 0.021193099021911622
+{'best_dl': 0.89, 'max_dl': 4.53, 'avg_dl': 2.9255, 'acc_1': 0.64, 'acc_3': 0.73, 'acc_5': 0.74, 'target_in_candidate': 0.74}
+Use DLD: True, Max Sub: 3, Cutoff: 200
+Average Time: 0.02247715950012207
+{'best_dl': 0.85, 'max_dl': 4.54, 'avg_dl': 2.9013333333333327, 'acc_1': 0.64, 'acc_3': 0.74, 'acc_5': 0.75, 'target_in_candidate': 0.75}
+Use DLD: True, Max Sub: 3, Cutoff: 300
+Average Time: 0.023029325008392335
+{'best_dl': 0.79, 'max_dl': 4.45, 'avg_dl': 2.8563333333333327, 'acc_1': 0.64, 'acc_3': 0.76, 'acc_5': 0.78, 'target_in_candidate': 0.78}
+Use DLD: True, Max Sub: 3, Cutoff: 400
+Average Time: 0.0233829402923584
+{'best_dl': 0.79, 'max_dl': 4.44, 'avg_dl': 2.8594999999999997, 'acc_1': 0.65, 'acc_3': 0.76, 'acc_5': 0.77, 'target_in_candidate': 0.77}
+Use DLD: True, Max Sub: 3, Cutoff: 500
+Average Time: 0.023489248752593995
+{'best_dl': 0.8, 'max_dl': 4.42, 'avg_dl': 2.8590000000000004, 'acc_1': 0.64, 'acc_3': 0.76, 'acc_5': 0.77, 'target_in_candidate': 0.77}
+
+CV Results
+/data/lily/lyf6/Filipino-Slang/main_algo.py:63: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  dataset_full = df.append(df_test).reset_index(drop=True)
+Use DLD: True, Max Sub: 2, Cutoff: 100
+Now on fold: 1
+Average Time: 0.01042564121293433
+Now on fold: 2
+Average Time: 0.009065018759833442
+Now on fold: 3
+Average Time: 0.008834597505169151
+Now on fold: 4
+Average Time: 0.012551403045654297
+Now on fold: 5
+Average Time: 0.005235430598258972
+best_dl: 1.4915432098765433, 0.11161312347074012
+max_dl: 4.181481481481482, 0.11669446562791523
+avg_dl: 2.930092592592593, 0.07032052019539808
+acc_1: 0.5038271604938271, 0.05360982286631773
+acc_3: 0.6128395061728396, 0.027453421778023488
+acc_5: 0.6178086419753086, 0.024938882769677668
+target_in_candidate: 0.6178086419753086, 0.024938882769677668
+/data/lily/lyf6/Filipino-Slang/main_algo.py:63: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  dataset_full = df.append(df_test).reset_index(drop=True)
+Use DLD: True, Max Sub: 3, Cutoff: 100
+Now on fold: 1
+Average Time: 0.01967640276308413
+Now on fold: 2
+Average Time: 0.014532189310332875
+Now on fold: 3
+Average Time: 0.03489519048620154
+Now on fold: 4
+Average Time: 0.08052557706832886
+Now on fold: 5
+Average Time: 0.14055504500865937
+best_dl: 1.470895061728395, 0.12348763503568404
+max_dl: 4.180987654320988, 0.24531161265574988
+avg_dl: 2.972566358024691, 0.1529793666839364
+acc_1: 0.4890123456790123, 0.07654535042805433
+acc_3: 0.6106790123456791, 0.05807838335401828
+acc_5: 0.6255246913580247, 0.052682355439060705
+target_in_candidate: 0.6255246913580247, 0.052682355439060705
+
+RESULTS FOR DLD = False
+Use DLD: False, Max Sub: 2, Cutoff: 10
+Average Time: 0.00019199371337890624
+{'best_dl': 1.71, 'max_dl': 4.69, 'avg_dl': 3.2328333333333332, 'acc_1': 0.44, 'acc_3': 0.49, 'acc_5': 0.5, 'target_in_candidate': 0.5}
+Use DLD: False, Max Sub: 2, Cutoff: 20
+Average Time: 0.00023162126541137696
+{'best_dl': 1.49, 'max_dl': 4.59, 'avg_dl': 3.1006666666666662, 'acc_1': 0.46, 'acc_3': 0.55, 'acc_5': 0.58, 'target_in_candidate': 0.58}
+Use DLD: False, Max Sub: 2, Cutoff: 30
+Average Time: 0.0002592301368713379
+{'best_dl': 1.44, 'max_dl': 4.6, 'avg_dl': 3.0716666666666663, 'acc_1': 0.46, 'acc_3': 0.58, 'acc_5': 0.61, 'target_in_candidate': 0.61}
+Use DLD: False, Max Sub: 2, Cutoff: 40
+Average Time: 0.0002811574935913086
+{'best_dl': 1.44, 'max_dl': 4.64, 'avg_dl': 3.0925, 'acc_1': 0.46, 'acc_3': 0.58, 'acc_5': 0.61, 'target_in_candidate': 0.61}
+Use DLD: False, Max Sub: 2, Cutoff: 50
+Average Time: 0.00029134273529052735
+{'best_dl': 1.37, 'max_dl': 4.61, 'avg_dl': 3.0381666666666667, 'acc_1': 0.46, 'acc_3': 0.58, 'acc_5': 0.61, 'target_in_candidate': 0.61}
+Use DLD: False, Max Sub: 2, Cutoff: 100
+Average Time: 0.0003260946273803711
+{'best_dl': 1.3, 'max_dl': 4.65, 'avg_dl': 3.056, 'acc_1': 0.47, 'acc_3': 0.61, 'acc_5': 0.64, 'target_in_candidate': 0.64}
+Use DLD: False, Max Sub: 2, Cutoff: 200
+Average Time: 0.0003595471382141113
+{'best_dl': 1.36, 'max_dl': 4.68, 'avg_dl': 3.0955, 'acc_1': 0.46, 'acc_3': 0.6, 'acc_5': 0.64, 'target_in_candidate': 0.64}
+Use DLD: False, Max Sub: 2, Cutoff: 300
+Average Time: 0.00036600351333618167
+{'best_dl': 1.37, 'max_dl': 4.68, 'avg_dl': 3.0995, 'acc_1': 0.46, 'acc_3': 0.6, 'acc_5': 0.64, 'target_in_candidate': 0.64}
+Use DLD: False, Max Sub: 2, Cutoff: 400
+Average Time: 0.00037618160247802733
+{'best_dl': 1.37, 'max_dl': 4.68, 'avg_dl': 3.0995, 'acc_1': 0.46, 'acc_3': 0.6, 'acc_5': 0.64, 'target_in_candidate': 0.64}
+Use DLD: False, Max Sub: 2, Cutoff: 500
+Average Time: 0.0003817605972290039
+{'best_dl': 1.37, 'max_dl': 4.68, 'avg_dl': 3.0995, 'acc_1': 0.46, 'acc_3': 0.6, 'acc_5': 0.64, 'target_in_candidate': 0.64}
+Use DLD: False, Max Sub: 3, Cutoff: 10
+Average Time: 0.009452149868011475
+{'best_dl': 3.02, 'max_dl': 4.73, 'avg_dl': 3.903833333333334, 'acc_1': 0.18, 'acc_3': 0.25, 'acc_5': 0.26, 'target_in_candidate': 0.26}
+Use DLD: False, Max Sub: 3, Cutoff: 20
+Average Time: 0.011408741474151612
+{'best_dl': 1.99, 'max_dl': 4.67, 'avg_dl': 3.389666666666666, 'acc_1': 0.37, 'acc_3': 0.43, 'acc_5': 0.46, 'target_in_candidate': 0.46}
+Use DLD: False, Max Sub: 3, Cutoff: 30
+Average Time: 0.012063770294189454
+{'best_dl': 1.58, 'max_dl': 4.72, 'avg_dl': 3.2611666666666657, 'acc_1': 0.37, 'acc_3': 0.51, 'acc_5': 0.56, 'target_in_candidate': 0.56}
+Use DLD: False, Max Sub: 3, Cutoff: 40
+Average Time: 0.013125312328338624
+{'best_dl': 1.41, 'max_dl': 4.73, 'avg_dl': 3.2029999999999994, 'acc_1': 0.37, 'acc_3': 0.52, 'acc_5': 0.59, 'target_in_candidate': 0.59}
+Use DLD: False, Max Sub: 3, Cutoff: 50
+Average Time: 0.013281421661376953
+{'best_dl': 1.33, 'max_dl': 4.74, 'avg_dl': 3.179, 'acc_1': 0.37, 'acc_3': 0.53, 'acc_5': 0.61, 'target_in_candidate': 0.61}
+Use DLD: False, Max Sub: 3, Cutoff: 100
+Average Time: 0.014636526107788086
+{'best_dl': 1.26, 'max_dl': 4.68, 'avg_dl': 3.1125, 'acc_1': 0.32, 'acc_3': 0.51, 'acc_5': 0.61, 'target_in_candidate': 0.61}
+Use DLD: False, Max Sub: 3, Cutoff: 200
+Average Time: 0.01608661413192749
+{'best_dl': 1.29, 'max_dl': 4.7, 'avg_dl': 3.128333333333333, 'acc_1': 0.3, 'acc_3': 0.49, 'acc_5': 0.59, 'target_in_candidate': 0.59}
+Use DLD: False, Max Sub: 3, Cutoff: 300
+Average Time: 0.01643939971923828
+{'best_dl': 1.24, 'max_dl': 4.63, 'avg_dl': 3.0973333333333333, 'acc_1': 0.28, 'acc_3': 0.48, 'acc_5': 0.61, 'target_in_candidate': 0.61}
+Use DLD: False, Max Sub: 3, Cutoff: 400
+Average Time: 0.01712158203125
+{'best_dl': 1.28, 'max_dl': 4.66, 'avg_dl': 3.1264999999999996, 'acc_1': 0.28, 'acc_3': 0.47, 'acc_5': 0.59, 'target_in_candidate': 0.59}
+Use DLD: False, Max Sub: 3, Cutoff: 500
+Average Time: 0.01681464433670044
+{'best_dl': 1.32, 'max_dl': 4.67, 'avg_dl': 3.1599999999999993, 'acc_1': 0.26, 'acc_3': 0.47, 'acc_5': 0.59, 'target_in_candidate': 0.59}
+
+CV Results
+/data/lily/lyf6/Filipino-Slang/main_algo.py:63: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  dataset_full = df.append(df_test).reset_index(drop=True)
+Use DLD: False, Max Sub: 2, Cutoff: 30
+Now on fold: 1
+Average Time: 0.0003717681508005401
+Now on fold: 2
+Average Time: 0.00032509403464234905
+Now on fold: 3
+Average Time: 0.00023199599466206116
+Now on fold: 4
+Average Time: 0.0002331465482711792
+Now on fold: 5
+Average Time: 0.00032970309257507324
+best_dl: 1.6911111111111112, 0.26394374565192874
+max_dl: 4.136111111111111, 0.16950079456098538
+avg_dl: 2.9581584362139917, 0.11630635172011741
+acc_1: 0.35731481481481475, 0.07041107767800087
+acc_3: 0.47391975308641976, 0.07931414199215185
+acc_5: 0.4912962962962963, 0.06696781263166215
+target_in_candidate: 0.4912962962962963, 0.06696781263166215
+/data/lily/lyf6/Filipino-Slang/main_algo.py:63: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  dataset_full = df.append(df_test).reset_index(drop=True)
+Use DLD: False, Max Sub: 3, Cutoff: 50
+Now on fold: 1
+Average Time: 0.016425821516248915
+Now on fold: 2
+Average Time: 0.021217678800041294
+Now on fold: 3
+Average Time: 0.013170931074354384
+Now on fold: 4
+Average Time: 0.009702947735786439
+Now on fold: 5
+Average Time: 0.15188751816749574
+best_dl: 1.9053086419753087, 0.23912353694237057
+max_dl: 4.247037037037037, 0.2551359798941525
+avg_dl: 3.1582808641975313, 0.2258122073010682
+acc_1: 0.2457716049382716, 0.03158503906728917
+acc_3: 0.40703703703703703, 0.046950785279676596
+acc_5: 0.45666666666666667, 0.040630509310695555
+target_in_candidate: 0.45666666666666667, 0.040630509310695555
