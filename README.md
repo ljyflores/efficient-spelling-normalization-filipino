@@ -1,5 +1,5 @@
 # Filipino-Slang
-Source code for Filipino slang correction project
+Source code for Filipino slang correction project; the paper can be found here! <a href>https://arxiv.org/abs/2210.02675</href>
 
 ### Examples
 
