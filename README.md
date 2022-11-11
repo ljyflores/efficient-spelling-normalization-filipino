@@ -1,5 +1,5 @@
 # Filipino-Slang
-<b>TLDR:</b> We explore a spelling/slang correction task in Filipino on a curated dataset, and demonstrate that an n-gram model can outperform augmented deep learning methods and Google Translate's spelling correction feature. The n-gram model has the benefit of (1) requiring little training time and compute power (it "trains" in a second on a CPU!) and (2) is inherently interpretable, allowing users to troubleshoot the model. Check out our paper <a href=https://arxiv.org/abs/2210.02675>here</href>, presented at EMNLP 2022 SustaiNLP workshop!
+<b>TLDR:</b> We explore a spelling/slang correction task in Filipino on a curated dataset, and demonstrate that an n-gram model can outperform augmented deep learning methods and Google Translate's spelling correction feature. The n-gram model has the benefit of (1) requiring little training time and compute power (it "trains" in a second on a CPU!) and (2) is inherently interpretable, allowing users to troubleshoot the model. Check out our paper <a href="https://arxiv.org/abs/2210.02675"> here</a>, presented at <a href="https://sites.google.com/view/sustainlp2022/home">EMNLP 2022 SustaiNLP workshop</a>!
 
 If you found this work useful, please consider citing:
 ```
