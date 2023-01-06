@@ -3,17 +3,14 @@
 
 If you found this work useful, please consider citing:
 ```
-@misc{https://doi.org/10.48550/arxiv.2210.02675,
-  doi = {10.48550/ARXIV.2210.02675},
-  url = {https://arxiv.org/abs/2210.02675},
-  author = {Flores, Lorenzo Jaime Yu and Radev, Dragomir},
-  keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {Look Ma, Only 400 Samples! Revisiting the Effectiveness of Automatic N-Gram Rule Generation for Spelling Normalization in Filipino},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {Creative Commons Attribution 4.0 International}
+@inproceedings{
+flores2022look,
+title={Look Ma, Only 400 Samples! Revisiting the Effectiveness of Automatic N-Gram Rule Generation for Spelling Normalization in Filipino},
+author={Anonymous},
+booktitle={Third Workshop on Simple and Efficient Natural Language Processing},
+year={2022},
+url={https://openreview.net/forum?id=_IO6k_td3M}
 }
-
 ```
 
 
