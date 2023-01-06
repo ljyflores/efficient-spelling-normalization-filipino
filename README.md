@@ -6,7 +6,7 @@ If you found this work useful, please consider citing:
 @inproceedings{
 flores2022look,
 title={Look Ma, Only 400 Samples! Revisiting the Effectiveness of Automatic N-Gram Rule Generation for Spelling Normalization in Filipino},
-author={Anonymous},
+author={Lorenzo Flores and Dragomir Radev},
 booktitle={Third Workshop on Simple and Efficient Natural Language Processing},
 year={2022},
 url={https://openreview.net/forum?id=_IO6k_td3M}
