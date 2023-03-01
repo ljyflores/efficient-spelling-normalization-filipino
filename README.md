@@ -3,13 +3,17 @@
 
 If you found this work useful, please consider citing:
 ```
-@inproceedings{
-flores2022look,
-title={Look Ma, Only 400 Samples! Revisiting the Effectiveness of Automatic N-Gram Rule Generation for Spelling Normalization in Filipino},
-author={Lorenzo Flores and Dragomir Radev},
-booktitle={Third Workshop on Simple and Efficient Natural Language Processing},
-year={2022},
-url={https://openreview.net/forum?id=_IO6k_td3M}
+@inproceedings{flores-radev-2022-look,
+    title = "Look Ma, Only 400 Samples! Revisiting the Effectiveness of Automatic N-Gram Rule Generation for Spelling Normalization in {F}ilipino",
+    author = "Flores, Lorenzo Jaime  and
+      Radev, Dragomir",
+    booktitle = "Proceedings of The Third Workshop on Simple and Efficient Natural Language Processing (SustaiNLP)",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates (Hybrid)",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.sustainlp-1.5",
+    pages = "29--35",
 }
 ```
 
